@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Josefin+Sans&family=Roboto:wght@100;300&family=Rowdies:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Syne+Tactile&display=swap');
+body{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-image: url("bcgTop.png");
+}
+h1{
+    margin: 100px 0 0 0;
+    font-family: 'Rowdies', cursive;
+    text-shadow: 0 2px 2px  black;
+}
+h2{
+    margin: 0;
+    font-family: 'Rowdies', cursive;
+    text-shadow: 0 2px 2px  black;
+}
+.baner--placeholder{
+    height: 67px;
+}
+.top--banner{
+    font-size: 1.3rem;
+    font-family: 'Syne Tactile', cursive;
+    font-weight: 1000;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: #171616;
+    color: #c94f4f;
+    position: fixed;
+    top: 0;
+    box-shadow: 0 0 30px 0 black;
+    
+}
+p{
+    color: #c94f4f; 
+}
+p:hover{
+    cursor: pointer;
+    background-color: #ff0000;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.start{
+    
+    width: 100%;
+    height: 100vh;
+    color: #c94f4f;
+    text-align: center;
+
+}
+.btn{
+    width:160px;
+    height: 50px;
+    border: 1px solid white;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    margin: 200px auto 0 auto;
+}
+#aboutMe{
+    border-top: 1px solid #c94f4f;
+    text-align: center;
+}
+#aboutMe h1{
+    color: #c94f4f;
+    text-shadow: 0 2px 2px  black;
+}
+#aboutMe p{
+    color: #bfb0b0;
+    font-family: 'Josefin Sans', sans-serif;
+}
