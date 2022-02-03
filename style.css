@@ -75,3 +75,33 @@ p:hover{
     color: #bfb0b0;
     font-family: 'Josefin Sans', sans-serif;
 }
+/* HAMBURGER MENU */
+#hamburger--menu{
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: 2%;
+    left: 2%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.line{
+    background-color: white;
+    border-radius: 10px;
+    width: 100%;
+    height: 10%;
+    transition: all 0.3s;
+}
+.line--0{
+    -webkit-transform: rotate(-45deg) translate(-18px, 12px) ;
+    transform: rotate(-45deg) translate(-18px, 12px) ;
+}  
+.line--1{
+    opacity:0;
+    
+}
+.line--2{
+    -webkit-transform: rotate(45deg) translate(-16px, -16px) ;
+    transform: rotate(45deg) translate(-16px, -16px) ;
+}
