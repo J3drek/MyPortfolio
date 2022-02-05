@@ -95,6 +95,7 @@ h2{
     color: #bfb0b0;
     font-family: 'Josefin Sans', sans-serif;
 }
+
 /* UP AND DOWN ANIMATION(MIGHT BE USEFUL) */
 /* @keyframes upAndDown {
     from {
@@ -127,6 +128,14 @@ h2{
     transform: translateY(0%);
 }
 
+.link--logo{
+    width: 46px;
+    height: 46px;
+    transition: all 1s;
+}
+.link--logo:hover{
+    transform: rotateY(360deg);
+}
 
 
 
