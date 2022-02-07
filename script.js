@@ -13,6 +13,8 @@ const contactButton = document.querySelector(".button");
 const portfolioContainer = document.querySelector(".all--previews");
 const progressBarFilling = document.querySelectorAll(".fillment");
 const progressBarItself = document.querySelectorAll(".bar--skills");
+const topHead = document.querySelector('.header');
+
 
 // prettier-ignore
 const links = ["https://j3drek.github.io/Bankist/","https://j3drek.github.io/Bankist-landingPage/","https://j3drek.github.io/WeatherAPP/","https://j3drek.github.io/Mapty/"];
@@ -29,6 +31,7 @@ class MyWebsite {
     this.autoUpdateYear();
     this.remoteInserting();
     this.getWidth();
+    this.getStoicQuote();
   }
   ButtonClick(event) {
     event.preventDefault();
@@ -63,18 +66,20 @@ class MyWebsite {
     event.target.style.transform = "translateY(0%)";
     event.target.style.color = "";
   }
-
+  //auto updating year in footer
   autoUpdateYear() {
     const year = document.querySelector(".footer");
     const rok = new Date();
     year.innerHTML = `Jędrzej Morzyk &copy; ${rok.getFullYear()}`;
   }
+  //auto updating age in first section
   autoUpdateAge() {
     const age = document.querySelector(".age");
     const year = new Date();
     // console.log(year.getFullYear())
     age.textContent = year.getFullYear() - 2003;
   }
+  //remote inserting links and miniatures of projects
   remoteInserting() {
     links.forEach((link) => {
       let splittedLink = link.split("/");
@@ -86,12 +91,23 @@ class MyWebsite {
       portfolioContainer.insertAdjacentHTML("afterbegin", HTML);
     });
   }
+  //Filling progress bars with percentage
   getWidth() {
     progressBarItself.forEach((bar) => {
       const percentageValue =
         (bar.lastElementChild.offsetWidth / bar.offsetWidth) * 100;
       bar.lastElementChild.textContent = `${percentageValue}%`;
     });
+  }
+  //I try to live along stoic philosophy so I added this xd
+  //API BY https://stoicquotesapi.com/
+  async getStoicQuote() {
+    const quoteRequest = await fetch(
+      "https://stoicquotesapi.com/v1/api/quotes/random"
+    );
+    const finalQuote = await quoteRequest.json();
+    topHead.textContent = `Stoic quote for you: ${finalQuote.body}--${finalQuote.author}`
+    console.log(finalQuote);
   }
 }
 const website = new MyWebsite();
