@@ -13,8 +13,7 @@ const contactButton = document.querySelector(".button");
 const portfolioContainer = document.querySelector(".all--previews");
 const progressBarFilling = document.querySelectorAll(".fillment");
 const progressBarItself = document.querySelectorAll(".bar--skills");
-const topHead = document.querySelector('.header');
-
+const topHead = document.querySelector(".header");
 
 // prettier-ignore
 const links = ["https://j3drek.github.io/Bankist/","https://j3drek.github.io/Bankist-landingPage/","https://j3drek.github.io/WeatherAPP/","https://j3drek.github.io/Mapty/"];
@@ -106,7 +105,7 @@ class MyWebsite {
       "https://stoicquotesapi.com/v1/api/quotes/random"
     );
     const finalQuote = await quoteRequest.json();
-    topHead.textContent = `Stoic quote for you: ${finalQuote.body}--${finalQuote.author}`
+    topHead.textContent = `Stoic quote for you: ${finalQuote.body}--${finalQuote.author}`;
     console.log(finalQuote);
   }
 }
