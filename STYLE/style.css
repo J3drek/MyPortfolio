@@ -268,7 +268,7 @@ ul {
   transform: rotateY(360deg);
 }
 
-@keyframes anim {
+/* @keyframes anim {
   from {
     transform: rotateZ(-1deg);
   }
@@ -282,7 +282,7 @@ ul {
   animation-iteration-count: infinite;
   animation-direction: alternate;
   animation-delay: 0ms;
-}
+} */
 /* 
 
 
