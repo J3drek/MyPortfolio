@@ -105,7 +105,7 @@ class MyWebsite {
       "https://stoicquotesapi.com/v1/api/quotes/random"
     );
     const finalQuote = await quoteRequest.json();
-    topHead.textContent = `Stoic quote for you: ${finalQuote.body}--${finalQuote.author}`;
+    topHead.textContent = `Stoic quote for you:    ${finalQuote.body}--${finalQuote.author}`;
     console.log(finalQuote);
   }
 }
