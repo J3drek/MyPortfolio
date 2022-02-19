@@ -197,7 +197,8 @@ ul {
   text-align: center !important;
   color: white;
   margin: 0 auto;
-  padding: 0 0 100px 0;
+  padding: 200px 0 300px 0;
+  transition: 0.6s all;
 }
 .dummy--child h1 {
   text-align: center !important;
@@ -263,6 +264,8 @@ ul {
   width: 100%;
   margin-top: 30rem;
   background-color: #1c1e21;
+  padding-bottom: 100px !important;
+  padding-top: 100px !important;
 }
 .contact .social:hover {
   transform: rotateY(360deg);
@@ -288,8 +291,19 @@ ul {
 
 
  */
+/* REVEAL ON SCROLL UTILITY CLASSES */
+.hidden{
+  opacity: 0;
+  transform: translateY(8rem);
+}
+
+
+
+
+
+
 /* MEDIA QUERY */
-@media (max-width: 768px) {
+@media (max-width: 912px) {
   .start h1 {
     flex-direction: column;
   }
@@ -305,7 +319,8 @@ ul {
     grid-template-rows: repeat(2, 1fr);
   }
   .dummy--child {
-    padding: 0 0 100px 0;
+    padding:200px 0 300px 0;
+    transition: 1s all;
   }
   .bar--skills {
     width: 300px;

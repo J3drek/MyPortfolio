@@ -14,6 +14,8 @@ const portfolioContainer = document.querySelector(".all--previews");
 const progressBarFilling = document.querySelectorAll(".fillment");
 const progressBarItself = document.querySelectorAll(".bar--skills");
 const topHead = document.querySelector(".header");
+const dummyChild = document.querySelectorAll(".dummy--child");
+const MY_BIRTH_YEAR = 2003;
 
 // prettier-ignore
 const links = ["https://j3drek.github.io/Bankist/","https://j3drek.github.io/Bankist-landingPage/","https://j3drek.github.io/WeatherAPP/","https://j3drek.github.io/Mapty/"];
@@ -31,28 +33,25 @@ class MyWebsite {
     this.remoteInserting();
     this.getWidth();
     this.getStoicQuote();
+    this.revealOnScroll();
   }
   ButtonClick(event) {
-    event.preventDefault();
     start.style.top = "-2000px";
     content.classList.remove("hidden");
     window.scrollTo({ top: 0 });
   }
   ButtonMouseOver(event) {
-    event.preventDefault();
     button.style.color = "black";
     buttonBcg.style.transform = "translateX(0%)";
     button.style.cursor = "pointer";
   }
   ButtonMouseOut(event) {
-    event.preventDefault();
     buttonBcg.style.transform = "translateX(-100%)";
     button.style.color = "white";
     button.style.cursor = "";
   }
   //TOP TITLE WITH BUBBLING
   titleMouseOver(event) {
-    event.preventDefault();
     if (event.target.classList.contains("to--animate")) {
       event.target.style.transform = "translateY(-20px)";
       event.target.style.cursor = "pointer";
@@ -60,7 +59,6 @@ class MyWebsite {
     }
   }
   titleMouseOut(event) {
-    event.preventDefault();
     event.target.style.cursor = "";
     event.target.style.transform = "translateY(0%)";
     event.target.style.color = "";
@@ -76,7 +74,7 @@ class MyWebsite {
     const age = document.querySelector(".age");
     const year = new Date();
     // console.log(year.getFullYear())
-    age.textContent = year.getFullYear() - 2003;
+    age.textContent = year.getFullYear() - MY_BIRTH_YEAR;
   }
   //remote inserting links and miniatures of projects
   remoteInserting() {
@@ -98,7 +96,7 @@ class MyWebsite {
       bar.lastElementChild.textContent = `${percentageValue}%`;
     });
   }
-  //I try to live along stoic philosophy so I added this xd
+  //I try to live along stoic philosophy so I added this
   //API BY https://stoicquotesapi.com/
   async getStoicQuote() {
     const quoteRequest = await fetch(
@@ -107,6 +105,23 @@ class MyWebsite {
     const finalQuote = await quoteRequest.json();
     topHead.textContent = `Stoic quote for you:    ${finalQuote.body}--${finalQuote.author}`;
     console.log(finalQuote);
+  }
+
+  revealOnScroll() {
+    const dummyChildren = [...dummyChild];
+    const observer = new IntersectionObserver(
+      function (entries, observer) {
+        const [entry] = entries;
+        if (entry.isIntersecting) {
+          entry.target.classList.remove("hidden");
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.3 }
+    );
+    dummyChildren.forEach((child) => {
+      observer.observe(child);
+    });
   }
 }
 const website = new MyWebsite();
